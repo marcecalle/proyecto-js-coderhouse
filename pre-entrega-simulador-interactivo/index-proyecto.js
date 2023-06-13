@@ -1,35 +1,32 @@
-// SIMULADOR INTERACTIVO
-
-// SUBASTA DE ILUSTRACIÓN
+// SIMULADOR INTERACTIVO DE UNA SUBASTA DE ILUSTRACIÓNES
 
 // Declaración y asignación de variables
 let valorItem = 0
-let ofertaUsuario
+let consentimientoSubasta = prompt('Bienvenido ¿Quiere realizar una oferta? si / no')
 
-// Validación de ingreso al simulador de subasta
-// let consentimientoSubasta = prompt('¿Quiere iniciar la subasta? si / no')
-// while (consentimientoSubasta === 'si') {
-//     console.log('El valor actual es de: $ ' + valorItem);
-//     ofertaUsuario = Number(prompt('Ingrese su oferta por favor'))
-//     if (ofertaUsuario > valorItem) {
-//         valorItem = ofertaUsuario
-//         console.log('Su oferta de $ ' + ofertaUsuario + ' fue aceptada, muchas gracias')
-//         // consentimientoSubasta = prompt('¿Desea realizar otra oferta? si / no')
-//     } else {
-//         console.log('Su oferta de $ ' + ofertaUsuario + ' no es superadora.')
-//     }
-//     consentimientoSubasta = prompt('¿Desea realizar otra oferta? si / no')
-// }
-
-let consentimientoSubasta = prompt('¿Quiere iniciar la subasta? si / no')
-
+// Función de validación por SI o por NO para iniciar la subasta
 function ingresoSubasta(consentimiento) {
     if (consentimiento === 'si') {
-        ofertaUsuario = Number(prompt('Ingrese su oferta por favor.'))
-        return ofertaUsuario
+        return consentimientoSubasta
     } else { 
-        console.log('Gracias por su visita.');
+    alert('Gracias, vuelva pronto.');
     }
 }
 
-ingresoSubasta(consentimientoSubasta)
+// función para que el usuario realice una oferta
+function ofertaUsuario(valorReferencia) {
+    alert('La oferta actual es $' + valorReferencia)
+    valorOferta = Number(prompt('Ingrese su oferta por favor.'))
+    if (valorOferta > valorReferencia) {
+        valorItem = valorOferta
+        alert('Su oferta de $' + valorOferta + ' fue aceptada, muchas gracias')
+    } else {
+        alert('Su oferta de $' + valorOferta + ' no es superadora.')
+    }
+}
+
+// Ciclo simulador de la validación y la oferta de la subasta
+while (ingresoSubasta(consentimientoSubasta) === 'si') {
+    ofertaUsuario(valorItem)
+    consentimientoSubasta = prompt('¿Quiere realizar otra oferta? si / no')
+}
