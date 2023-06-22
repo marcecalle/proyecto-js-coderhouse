@@ -39,3 +39,37 @@ while (ingresoSubasta(consentimientoSubasta) === "si") {
   ofertaUsuario(valorItem);
   consentimientoSubasta = prompt("¿Quiere realizar otra oferta? si / no");
 }
+
+// Actividad N°2
+
+// Funcion constructora
+
+function Pieza(nombre, tipo, valor) {
+  this.nombre  = nombre
+  this.tipo    = tipo
+  this.valor   = valor
+  this.stock   = true
+  this.vendida = function() {
+    let venta = prompt('¿la pieza ' + this.nombre + ' fue vendida? indique si / no')
+    if (venta === 'si') {
+      this.stock = false
+      alert('Ya no hay stock de ' + this.nombre)
+    } else {
+      alert('No hay cambios en el stock de ' + this.nombre)
+    }
+  }
+}
+
+// Declarar array y asignar objetos de la funcion constructora
+
+const piezas = []
+
+piezas.push(new Pieza('venus', 'muñeca', '1000'))
+piezas.push(new Pieza('naturalia_2', 'collage', '750'))
+piezas.push(new Pieza('el_delta', 'tinta', '900'))
+
+console.table(piezas)
+
+piezas[0].vendida()
+
+console.table(piezas)
