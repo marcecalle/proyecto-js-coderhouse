@@ -89,7 +89,13 @@ piezas.push(new Pieza('naturalia_2', 'collage', '750'))
 piezas.push(new Pieza('el_delta', 'tinta', '900'))
 
 console.table(piezas)
+// piezas[0].vendida()
+// console.table(piezas)
 
-piezas[0].vendida()
+// Buscar elementos en mi array
 
-console.table(piezas)
+let inputBusqueda = prompt('Ingrese parametro de busqueda: ')
+
+let resultadoBusqueda = piezas.find((elemento) => elemento.nombre === inputBusqueda)
+
+console.log(resultadoBusqueda)
