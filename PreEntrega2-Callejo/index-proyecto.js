@@ -3,11 +3,7 @@
 function ingresoSubasta(consentimiento) {
    if (consentimiento === "si") {
       return consentimientoSubasta;
-   }
-   if (consentimiento === "no") {
-      alert("Gracias, vuelva pronto.");
-   }
-   if (consentimiento !== "si" && consentimiento !== "no") {
+   }  if (consentimiento !== "si" && consentimiento !== "no") {
       alert("La opción ingresada no es valida.");
    }
 }
@@ -15,13 +11,17 @@ function ingresoSubasta(consentimiento) {
 function ofertaUsuario(valorReferencia) {
    let ofertaCliente = parseFloat(prompt("La oferta actual es de $" + valorReferencia + "\nIngrese su oferta por favor"));
    if (ofertaCliente > valorReferencia) {
-      piezas.valorOferta = ofertaCliente;
       alert("Su oferta de $" + ofertaCliente + " fue aceptada, muchas gracias");
-      consentimientoSubasta = 'no'
+      consentimientoSubasta = prompt("¿Desea mejorar su oferta? (si - no)")
+      return ofertaCliente
    } else {
-      // alert("Su oferta de $" + ofertaCliente + " no es superadora.");
-      consentimientoSubasta = prompt("Su oferta de $" + ofertaCliente + "no es superadora.\n¿Quiere subir su oferta? (si - no)")
+      consentimientoSubasta = prompt("Su oferta de $" + ofertaCliente + " no es superadora.\n¿Quiere mejorar su oferta? (si - no)")
+      return valorReferencia
    }
+}
+
+function asignarValor(valorOferta) {
+
 }
 
 // Clases
@@ -44,15 +44,18 @@ class Pieza {
       alert('No hay cambios en el stock de ' + this.nombre)
       }
    }
+   // actualizarOferta() {
+
+   // }
 }
 
 // Declarar array y asignar objetos de la funcion constructora
 
 const piezas = []
 
-piezas.push(new Pieza('venus', 'muñeca', '1000', 'subasta'))
-piezas.push(new Pieza('naturalia_2', 'collage', '750', 'venta'))
-piezas.push(new Pieza('el_delta', 'tinta', '900', 'subasta'))
+piezas.push(new Pieza('venus', 'muñeca', '1000', 'venta'))
+piezas.push(new Pieza('naturalia_2', 'collage', '750', 'subasta'))
+piezas.push(new Pieza('el_delta', 'tinta', '900', 'venta'))
 
 //* Switch de selección de operación
 
@@ -62,14 +65,21 @@ let entrada = prompt('Para COMPRAS ingrese 1\nPara SUBASTAS ingrese 2\nPara SALI
 while(entrada != "ESC" ){
    switch (entrada) {
       case "1":
-         alert("No hay piezas a la venta en este momento.");
+         if(piezas.some((elemento) => elemento.operacion === 'venta')) {
+            alert("Pagina en construcción. disculpe las molestias")
+         } else {
+            alert("No hay piezas a la venta en este momento.");
+         }
          break;
       case "2":
-         let piezaSubasta = piezas.find((elemento) => elemento.operacion === 'subasta')
-         consentimientoSubasta = prompt(`Bienvenido a la SUBASTA.\n¿Quiere realizar una oferta por la pieza ${piezaSubasta.nombre}?\n(si - no)`)
-         while (ingresoSubasta(consentimientoSubasta) === "si") {
-            ofertaUsuario(piezaSubasta.valorOferta);
-            // consentimientoSubasta = prompt("¿Quiere subir su oferta? si / no");
+         if(piezas.some((elemento) => elemento.operacion === 'subasta')) {
+            let piezaSubasta = piezas.find((elemento) => elemento.operacion === 'subasta')
+            consentimientoSubasta = prompt(`Bienvenido a la SUBASTA.\n¿Quiere realizar una oferta por la pieza ${piezaSubasta.nombre}?\n(si - no)`)
+            while (ingresoSubasta(consentimientoSubasta) === "si") {
+               piezaSubasta.valorOferta = ofertaUsuario(piezaSubasta.valorOferta)
+            }
+         } else {
+            alert("No hay piezas a subastar.")
          }
          break;
       default:
