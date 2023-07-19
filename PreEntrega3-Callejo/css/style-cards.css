@@ -8,21 +8,32 @@ body {
    font-family: sans-serif;
 }
 
+h1 {
+   color: #64968c
+}
+
 .container-header {
-   background-color: #aaaaaa;
+   background-color: #cccccc;
    height: 100px;
    display: flex;
    justify-content: space-between;
    align-items: center;
+   border-bottom: 5px solid #64968c;
 }
 
 .container-header .container-logo {
    margin-left: 25px;
 }
 
+.container-header .container-logo > a > span {
+   font-size: 2.5em;
+   color: #d72424;
+}
+
 .container-header .container-nav .link-items {
    list-style: none;
    display: flex;
+   align-items: center;
    justify-content: space-evenly;
    margin-right: 25px;
 }
@@ -30,26 +41,66 @@ body {
 .container-header .container-nav .link-items .link-item {
    padding: 5px 15px;
    text-decoration: none;
-   color: #ffffff;
+   color: #64968c;
 }
 
 .container-header .container-nav .link-items .link-item:hover {
-   color: #000000;
-   border-bottom: 2px solid #000000;
+   border-bottom: 2px solid #d72424;
 }
 
 .main-container {
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   gap: 8px;
+   margin-top: 20px;
 }
 
 .cards {
    margin: 0 auto;
    max-width: 1000px;
    display: grid;
-   grid-template-columns: repeat(3, 1fr);
+   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
    gap: 20px;
    font-family: sans-serif;
+}
+
+.card {
+   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.card__image {
+   width:100%;
+   height: 200px;
+   overflow: hidden;
+   object-fit: cover;
+   display: block;
+   border-radius: 8px 8px 0 0;
+}
+
+.card__content {
+   line-height: 1.5;
+   font-size: 0.9em;
+   padding: 15px;
+   background: #fafafa;
+}
+
+.card__info {
+   padding: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #eeeeee;
+   font-size: 0.8em;
+   border-bottom: 2px solid #cccccc;
+}
+
+.card__info span {
+   font-size: 1em;
+   margin-right: 8px;
+}
+
+.card__link {
+   color: #64968c;
+   text-decoration: none;
+}
+
+.card__link:hover {
+   text-decoration: underline;
 }
