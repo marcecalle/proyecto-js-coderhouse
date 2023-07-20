@@ -82,7 +82,7 @@ h1 {
 }
 
 .card__info {
-   padding: 15px;
+   padding: 10px;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -92,15 +92,20 @@ h1 {
 }
 
 .card__info span {
-   font-size: 1em;
+   font-size: 1.75em;
    margin-right: 8px;
 }
 
-.card__link {
-   color: #64968c;
-   text-decoration: none;
+.card__btn {
+   border: none;
 }
 
-.card__link:hover {
-   text-decoration: underline;
+.card__btn span {
+   color: #64968c;
+   margin: 0;
+}
+
+.card__btn span:hover {
+   color: #d72424;
+   cursor: pointer;
 }
