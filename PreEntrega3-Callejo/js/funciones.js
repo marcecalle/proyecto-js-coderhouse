@@ -1,5 +1,5 @@
-export const guardarObrasLS = (clave, valor) => localStorage.setItem(clave, JSON.stringify(valor))
-export const extraerObrasLS = (clave) => JSON.parse(localStorage.getItem(clave))
+export const guardarEnLS = (clave, valor) => localStorage.setItem(clave, JSON.stringify(valor))
+export const extraerDeLS = (clave) => JSON.parse(localStorage.getItem(clave))
 
 export function agregarCardsVenta(obras) {
    let card = document.createElement('div')
@@ -15,7 +15,7 @@ export function agregarCardsVenta(obras) {
          <div class="card__info">
             <div>
                <a class="card__btn add-cart" href="#">
-               <span class="material-symbols-outlined">visibility</span>
+                  <span class="material-symbols-outlined">add_shopping_cart</span>
                </a>
             </div>
          </div>
@@ -41,6 +41,27 @@ export function agregarCardsSubasta(obras) {
                <input type="number" placeholder="Oferta">
                <button class="subasta__btn">Submit</button>
             </div>
+         </div>
+         `
+         return card
+}
+
+export function agregarCardsCarrito(miCarrito) {
+   let card = document.createElement('div')
+   card.classList.add('card')
+   card.innerHTML = 
+         `
+         <img src="${miCarrito.img}" alt="${miCarrito.descripcion}" class="card__image">
+         <div class="card__content">
+            <h3>${miCarrito.nombre}</h3>
+            <p>${miCarrito.descripcion}</p>
+            <hr>
+            <p>Valor actual: <strong>$ ${miCarrito.valor}</strong>.-</p>
+         </div>
+         <div class="card__info">
+            <button class="card__btn subasta__btn">
+               <span class="material-symbols-outlined">delete</span>
+            </button>
          </div>
          `
          return card

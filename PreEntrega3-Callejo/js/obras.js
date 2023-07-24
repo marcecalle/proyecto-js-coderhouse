@@ -1,4 +1,4 @@
-class Obra {
+export class Obra {
    constructor(artista, nombre, img, year, descripcion, valor, operacion, valorOferta) {
       this.artista     = artista
       this.nombre      = nombre

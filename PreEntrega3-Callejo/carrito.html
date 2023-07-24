@@ -7,6 +7,7 @@
       <title>Galería de arte</title>
       <link rel="stylesheet" href="css/style-cards.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
    </head>
    <body>
       <header>
@@ -20,7 +21,7 @@
          <nav class="container-nav">
             <ul class="link-items">
                <li><a class="link-item" href="index.html">Galería</a></li>
-               <li><a class="link-item" href="#">Subasta</a></li>
+               <li><a class="link-item" href="subasta.html">Subasta</a></li>
                <li><a class="link-item" href="carrito.html"><span class="material-symbols-outlined">
                   shopping_cart
                   </span></a></li>
@@ -29,11 +30,13 @@
       </div>
       </header>
       <main class="main-container">
-      <section class="cards">
+      <section id="cards-container" class="cards">
          
       </section>
       </main>
       <footer></footer>
-      <script src="js/carrito.js"></script>
+      <script type="module" src="js/carrito.js"></script>
+      <script type="module" src="js/funciones.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
    </body>
 </html>
