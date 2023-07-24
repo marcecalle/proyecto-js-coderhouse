@@ -10,15 +10,15 @@ class Obra {
       this.valorOferta = valorOferta
       this.stock       = true
    }
-   vendida() {
-      let venta = prompt('¿la pieza ' + this.nombre + ' fue vendida? indique si / no')
-      if (venta === 'si') {
-      this.stock = false
-      alert('Ya no hay stock de ' + this.nombre)
-      } else {
-      alert('No hay cambios en el stock de ' + this.nombre)
-      }
-   }
+   // vendida() {
+   //    let venta = prompt('¿la pieza ' + this.nombre + ' fue vendida? indique si / no')
+   //    if (venta === 'si') {
+   //    this.stock = false
+   //    alert('Ya no hay stock de ' + this.nombre)
+   //    } else {
+   //    alert('No hay cambios en el stock de ' + this.nombre)
+   //    }
+   // }
 }
 
 export const obras = []
@@ -29,3 +29,6 @@ obras.push(new Obra('Picasso', 'Retrato de Daniel-Henry Kahnweiler', 'assets/img
 obras.push(new Obra('Dalí', 'La persistencia de la memoria', 'assets/img/dali-01.png', '1931', 'Óleo sobre lienzo 24 x 33 cm', '20000', 'venta'))
 obras.push(new Obra('Dalí', 'Las tentaciones de San Antonio', 'assets/img/dali-02.png','1947', 'Óleo sobre lienzo 90 x 119,5 cm', '16000', 'subasta'))
 obras.push(new Obra('Dalí', 'Retrato de Pablo Picasso en el siglo XXI', 'assets/img/dali-03.png','1947', 'Óleo sobre lienzo 65,6 x 56 cm', '17000', 'venta'))
+
+export const obrasVenta   = obras.filter((obra) => obra.operacion === 'venta')
+// export const obrasSubasta = obras.filter((obra) => obra.operacion === 'subasta')
