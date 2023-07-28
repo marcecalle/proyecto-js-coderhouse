@@ -10,7 +10,7 @@ guardarEnLS('obrasLS', obras)
 //TRAER NODO DEL INDEX
 let cardsContainer = document.getElementById('cards-container')
 
-//AGRAGAR CARDS AL INDEX
+//AGREGAR CARDS AL INDEX
 for(let obra of obrasVenta) {
    cardsContainer.appendChild(agregarCardsVenta(obra))
 }

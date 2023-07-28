@@ -1,0 +1,68 @@
+[
+{
+   "id": 1,
+   "artista": "Picasso",
+   "nombre": "Mujer con mandolina",
+   "img": "assets/img/picasso-01.jpg",
+   "year": "1910",
+   "descripcion": "Óleo sobre lienzo. 100 x 73,6 cm",
+   "valor": 10000,
+   "operacion": "subasta",
+   "valorOferta": ""
+},
+{
+   "id": 2,
+   "artista": "Picasso",
+   "nombre": "Las señoritas de Avignon",
+   "img": "assets/img/picasso-02.jpg",
+   "year": "1907",
+   "descripcion": "Óleo sobre lienzo. 243,9 x 233,7 cm",
+   "valor": 15000,
+   "operacion": "venta",
+   "valorOferta": ""
+},
+{
+   "id": 3,
+   "artista": "Picasso",
+   "nombre": "Retrato de Daniel-Henry Kahnweiler",
+   "img": "assets/img/picasso-03.jpg",
+   "year": "1910",
+   "descripcion": "Óleo sobre lienzo 100,4 x 72,4 cm",
+   "valor": 12000,
+   "operacion": "venta",
+   "valorOferta": ""
+},
+{
+   "id": 4,
+   "artista": "Dalí",
+   "nombre": "La persistencia de la memoria",
+   "img": "assets/img/dali-01.jpg",
+   "year": "1931",
+   "descripcion": "Óleo sobre lienzo 24 x 33 cm",
+   "valor": 20000,
+   "operacion": "venta",
+   "valorOferta": ""
+},
+{
+   "id": 5,
+   "artista": "Dalí",
+   "nombre": "Las tentaciones de San Antonio",
+   "img": "assets/img/dali-02.jpg",
+   "year": "1947",
+   "descripcion": "Óleo sobre lienzo 90 x 119,5 cm",
+   "valor": 16000,
+   "operacion": "subasta",
+   "valorOferta": ""
+},
+{
+   "id": 6,
+   "artista": "Dalí",
+   "nombre": "Retrato de Pablo Picasso en el siglo XXI",
+   "img": "assets/img/dali-03.jpg",
+   "year": "1947",
+   "descripcion": "Óleo sobre lienzo 65,6 x 56 cm",
+   "valor": 17000,
+   "operacion": "venta",
+   "valorOferta": ""
+}
+]

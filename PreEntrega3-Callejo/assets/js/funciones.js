@@ -6,7 +6,11 @@ export function agregarCardsVenta(obras) {
    card.classList.add('card')
    card.innerHTML = 
          `
-         <img src="${obras.img}" alt="${obras.descripcion}" class="card__image">
+         <div>
+            <a href="/PreEntrega3-Callejo/detalleObra.html">   
+               <img src="${obras.img}" alt="${obras.descripcion}" class="card__image">
+            </a>
+         </div>
          <div class="card__content">
             <h3>${obras.nombre}</h3>
             <p>${obras.descripcion}</p>
@@ -28,7 +32,11 @@ export function agregarCardsSubasta(obras) {
    card.classList.add('card')
    card.innerHTML = 
          `
-         <img src="${obras.img}" alt="${obras.descripcion}" class="card__image">
+         <div>
+            <a href="/PreEntrega3-Callejo/detalleObra.html">   
+               <img src="${obras.img}" alt="${obras.descripcion}" class="card__image">
+            </a>
+         </div>
          <div class="card__content">
             <h3>${obras.nombre}</h3>
             <p>${obras.descripcion}</p>
@@ -46,17 +54,21 @@ export function agregarCardsSubasta(obras) {
          return card
 }
 
-export function agregarCardsCarrito(miCarrito) {
+export function agregarCardsDetalle(obras) {
    let card = document.createElement('div')
    card.classList.add('card')
    card.innerHTML = 
          `
-         <img src="${miCarrito.img}" alt="${miCarrito.descripcion}" class="card__image">
+         <div>
+            <a href="detalleObra.html?oid=${obras.id}">   
+               <img src="${obras.img}" alt="${obras.descripcion}" class="card__image">
+            </a>
+         </div>
          <div class="card__content">
-            <h3>${miCarrito.nombre}</h3>
-            <p>${miCarrito.descripcion}</p>
+            <h3>${obras.nombre}</h3>
+            <p>${obras.descripcion}</p>
             <hr>
-            <p>Valor actual: <strong>$ ${miCarrito.valor}</strong>.-</p>
+            <p>Valor actual: <strong>$ ${obras.valor}</strong>.-</p>
          </div>
          <div class="card__info">
             <button class="card__btn subasta__btn">
