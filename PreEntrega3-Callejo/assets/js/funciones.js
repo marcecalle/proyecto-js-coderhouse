@@ -7,7 +7,7 @@ export function agregarCardsVenta(obras) {
    card.innerHTML = 
          `
          <div>
-            <a href="/PreEntrega3-Callejo/detalleObra.html">   
+            <a href="detalleObra.html?oid=${obras.id}">   
                <img src="${obras.img}" alt="${obras.descripcion}" class="card__image">
             </a>
          </div>
@@ -33,7 +33,7 @@ export function agregarCardsSubasta(obras) {
    card.innerHTML = 
          `
          <div>
-            <a href="/PreEntrega3-Callejo/detalleObra.html">   
+            <a href="detalleObra.html?oid=${obras.id}">   
                <img src="${obras.img}" alt="${obras.descripcion}" class="card__image">
             </a>
          </div>
