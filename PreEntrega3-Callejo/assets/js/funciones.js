@@ -1,14 +1,6 @@
 export const guardarEnLS = (clave, valor) => localStorage.setItem(clave, JSON.stringify(valor))
 export const extraerDeLS = (clave) => JSON.parse(localStorage.getItem(clave))
 
-export const actualizarValorOferta = (obra) => {
-   let nuevoValor = document.querySelector('#valor-oferta')
-   nuevoValor.innerHTML =
-      `
-      <span id="valor-oferta">$ ${obra.valorOferta}</span>
-      `
-}
-
 export function agregarCardsVenta(obras) {
    let card = document.createElement('div')
    card.classList.add('card')
@@ -87,3 +79,17 @@ export function agregarCardsDetalle(obras) {
          return card
 }
 
+export const renderValorOferta = (obra) => {
+   let nuevoValor = document.querySelector('#valor-oferta')
+   nuevoValor.innerHTML =
+      `
+      <span id="valor-oferta">$ ${obra.valorOferta}</span>
+      `
+}
+
+// export const actualizarValorOfertaObra = (obras, id) => {
+//    for (const obra of obras) {
+//       obras.find( obra => obra.id === id )
+      
+//    }
+// }

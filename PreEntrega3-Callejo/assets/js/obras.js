@@ -11,6 +11,9 @@ export class Obra {
       this.valorOferta = valor
       this.stock       = true
    }
+   actualizarValorOferta(valor) {
+      this.valorOferta = valor
+   }
    // vendida() {
    //    let venta = prompt('¿la pieza ' + this.nombre + ' fue vendida? indique si / no')
    //    if (venta === 'si') {
