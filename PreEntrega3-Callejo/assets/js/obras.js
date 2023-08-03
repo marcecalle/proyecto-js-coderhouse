@@ -1,5 +1,5 @@
 export class Obra {
-   constructor(id, artista, nombre, img, year, descripcion, valor, operacion, valorOferta) {
+   constructor(id, artista, nombre, img, year, descripcion, valor, operacion) {
       this.id          = id
       this.artista     = artista
       this.nombre      = nombre
@@ -8,7 +8,7 @@ export class Obra {
       this.descripcion = descripcion
       this.valor       = valor
       this.operacion   = operacion
-      this.valorOferta = valorOferta
+      this.valorOferta = valor
       this.stock       = true
    }
    // vendida() {
