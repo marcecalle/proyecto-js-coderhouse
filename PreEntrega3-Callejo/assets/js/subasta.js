@@ -1,5 +1,5 @@
 import { obrasSubasta } from "./obras.js"
-import { guardarEnLS, extraerDeLS, agregarCardsSubasta, renderValorOferta } from "./funciones.js"
+import { guardarEnLS, extraerDeLS, agregarCardsSubasta, actualizarValorOferta, renderValorOferta } from "./funciones.js"
 
 // TRAER NODO DEL HTML
 let cardsContainer = document.getElementById('cards-container')
@@ -24,9 +24,11 @@ botonOferta.forEach(boton => {
                   background: 'linear-gradient(to right, #6ddd41, #6ddd41)'
             }
          }).showToast()
-         // obrasSubasta.actualizarValorOferta(oferta)
-         renderValorOferta(obrasSubasta)
-         console.log(obrasSubasta);
+         // ACTUALIZAR EL VALOR DE LA PROPIEDAD valorOferta Y RENDERIZAR EL VALOR EN LA CARD
+         actualizarValorOferta(obrasSubasta, e.target.id, oferta)
+         for(let obra of obrasSubasta) {
+            renderValorOferta(obra)
+         }
       } else {
          Toastify({
             text: 'La Oferta recibida no supera la oferta actual',
