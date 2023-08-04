@@ -68,7 +68,7 @@ export function agregarCardsDetalle(obras) {
             <h3>${obras.nombre}</h3>
             <p>${obras.descripcion}</p>
             <hr>
-            <p>Valor actual: <strong>$ ${obras.valorOferta}</strong>.-</p>
+            <p>Valor actual: <span id="${obras.id}" class="valor-oferta">$ ${obras.valorOferta}</span>.-</p>
          </div>
          <div class="card__info">
             <button class="card__btn subasta__btn">
@@ -79,13 +79,14 @@ export function agregarCardsDetalle(obras) {
          return card
 }
 
-export const renderValorOferta = (obra) => {
-   const nuevoValor = document.querySelectorAll('.valor-oferta')
-   nuevoValor.innerHTML =
-      `
-      <span id="${obra.id}" class="valor-oferta">$ ${obra.valorOferta}</span>
-      `
-}
+//! export const renderValorOferta = (obra) => {
+//!    const nuevoValor = document.querySelectorAll('.valor-oferta')
+//!    const valorOferta = nuevoValor.find(el => el.id === obra.id)
+//!    valorOferta.innerHTML =
+//!       `
+//!       <span id="${obra.id}" class="valor-oferta">$ ${obra.valorOferta}</span>
+//!       `
+//! }
 
 export const actualizarValorOferta = (obra, id, valor) => {
    const indiceElemento = obra.findIndex(el => el.id === id)

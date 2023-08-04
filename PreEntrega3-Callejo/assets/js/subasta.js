@@ -15,7 +15,7 @@ const botonOferta = document.querySelectorAll('.subasta__btn')
 botonOferta.forEach(boton => {
    boton.addEventListener('click', (e) => {
       let oferta = parseFloat(e.target.parentNode.children[1].value)
-      const obra = obrasSubasta.find(obra => obra.id === e.target.id)
+      let obra = obrasSubasta.find(obra => obra.id === e.target.id)
       if(oferta > obra.valorOferta) {
          Toastify({
             text: 'Oferta recibida',
@@ -26,9 +26,7 @@ botonOferta.forEach(boton => {
          }).showToast()
          // ACTUALIZAR EL VALOR DE LA PROPIEDAD valorOferta Y RENDERIZAR EL VALOR EN LA CARD
          actualizarValorOferta(obrasSubasta, e.target.id, oferta)
-         for(let obra of obrasSubasta) {
-            renderValorOferta(obra)
-         }
+         //! renderValorOferta(obra)
       } else {
          Toastify({
             text: 'La Oferta recibida no supera la oferta actual',
