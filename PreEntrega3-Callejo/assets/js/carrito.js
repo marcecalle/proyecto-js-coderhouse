@@ -1,5 +1,5 @@
 import { guardarEnLS, extraerDeLS, agregarCardsCarrito } from "./funciones.js"
-import { obras, } from "./obras.js"
+import { obras, obrasVenta, } from "./obras.js"
 
 let miCarrito
 

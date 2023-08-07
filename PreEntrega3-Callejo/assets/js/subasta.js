@@ -24,9 +24,10 @@ botonOferta.forEach(boton => {
                   background: 'linear-gradient(to right, #6ddd41, #6ddd41)'
             }
          }).showToast()
-         // ACTUALIZAR EL VALOR DE LA PROPIEDAD valorOferta Y RENDERIZAR EL VALOR EN LA CARD
+         // ACTUALIZAR valorOferta
          actualizarValorOferta(obrasSubasta, e.target.id, oferta)
-         //! renderValorOferta(obra)
+         // RENDERIZAR NUEVO valorOferta
+         renderValorOferta(obrasSubasta, e.target.id)
       } else {
          Toastify({
             text: 'La Oferta recibida no supera la oferta actual',

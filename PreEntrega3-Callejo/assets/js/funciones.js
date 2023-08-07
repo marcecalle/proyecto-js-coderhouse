@@ -41,7 +41,7 @@ export function agregarCardsSubasta(obras) {
             <h3>${obras.nombre}</h3>
             <p>${obras.descripcion}</p>
             <hr>
-            <p>Valor actual: <span id="${obras.id}" class="valor-oferta">$ ${obras.valorOferta}</span>.-</p>
+            <p>Valor actual: <strong><span class="valor-oferta">$ ${obras.valorOferta}</span></strong>.-</p>
          </div>
          <div class="card__info">
             <div>
@@ -68,7 +68,7 @@ export function agregarCardsDetalle(obras) {
             <h3>${obras.nombre}</h3>
             <p>${obras.descripcion}</p>
             <hr>
-            <p>Valor actual: <span id="${obras.id}" class="valor-oferta">$ ${obras.valorOferta}</span>.-</p>
+            <p>Valor actual: <span class="valor-oferta">$ ${obras.valorOferta}</span>.-</p>
          </div>
          <div class="card__info">
             <button class="card__btn subasta__btn">
@@ -79,19 +79,42 @@ export function agregarCardsDetalle(obras) {
          return card
 }
 
-//! export const renderValorOferta = (obra) => {
-//!    const nuevoValor = document.querySelectorAll('.valor-oferta')
-//!    const valorOferta = nuevoValor.find(el => el.id === obra.id)
-//!    valorOferta.innerHTML =
-//!       `
-//!       <span id="${obra.id}" class="valor-oferta">$ ${obra.valorOferta}</span>
-//!       `
-//! }
+export function agregarCardsCarrito(obras) {
+   let card = document.createElement('div')
+   card.classList.add('card')
+   card.innerHTML = 
+         `
+         <div>
+            <a href="detalleObra.html?oid=${obras.id}">   
+               <img src="${obras.img}" alt="${obras.descripcion}" class="card__image">
+            </a>
+         </div>
+         <div class="card__content">
+            <h3>${obras.nombre}</h3>
+            <p>${obras.descripcion}</p>
+            <hr>
+            <p>Valor actual: <span class="valor-oferta">$ ${obras.valorOferta}</span>.-</p>
+         </div>
+         <div class="card__info">
+            <button class="card__btn subasta__btn">
+               <span class="material-symbols-outlined">delete</span>
+            </button>
+         </div>
+         `
+         return card
+}
+
+export const renderValorOferta = (obra, id) => {
+   let indice = obra.findIndex(el => el.id === id)
+   const valorOferta = document.querySelectorAll('.valor-oferta')[indice]
+   let obraId = obra.find(obra => obra.id === id)
+   valorOferta.innerText = `$ ${obraId.valorOferta}`
+}
 
 export const actualizarValorOferta = (obra, id, valor) => {
    const indiceElemento = obra.findIndex(el => el.id === id)
    const obrasCopia = [...obra]
    obrasCopia[indiceElemento].valorOferta = valor
    obra = obrasCopia
-   return obra
+   // return obra
 }
