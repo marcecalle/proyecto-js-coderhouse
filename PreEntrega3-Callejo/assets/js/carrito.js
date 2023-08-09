@@ -1,4 +1,4 @@
-import { guardarEnLS, extraerDeLS, agregarCardsCarrito } from "./funciones.js"
+import { guardarEnLS, extraerDeLS, renderCardsCarrito } from "./funciones.js"
 import { obras, obrasVenta, } from "./obras.js"
 
 let miCarrito
@@ -17,7 +17,7 @@ console.log(miCarrito);
 
 if (miCarrito.length !== 0) {
    for(let items of miCarrito) {
-      cardsContainer.appendChild(agregarCardsCarrito(items))
+      cardsContainer.appendChild(renderCardsCarrito(items))
    }
 } else {
    alert('Carrto Vacío')

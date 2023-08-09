@@ -1,5 +1,5 @@
 import { obras, obrasVenta } from "./obras.js"
-import { guardarEnLS, extraerDeLS, agregarCardsVenta } from "./funciones.js"
+import { guardarEnLS, extraerDeLS, renderCardsVenta } from "./funciones.js"
 
 // GUARDAR OBRAS EN EL LOCAL STORAGE
 guardarEnLS('obrasLS', obras)
@@ -12,5 +12,5 @@ let cardsContainer = document.getElementById('cards-container')
 
 //AGREGAR CARDS AL INDEX
 for(let obra of obrasVenta) {
-   cardsContainer.appendChild(agregarCardsVenta(obra))
+   cardsContainer.appendChild(renderCardsVenta(obra))
 }

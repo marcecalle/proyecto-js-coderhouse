@@ -1,7 +1,7 @@
 export const guardarEnLS = (clave, valor) => localStorage.setItem(clave, JSON.stringify(valor))
 export const extraerDeLS = (clave) => JSON.parse(localStorage.getItem(clave))
 
-export function agregarCardsVenta(obras) {
+export function renderCardsVenta(obras) {
    let card = document.createElement('div')
    card.classList.add('card')
    card.innerHTML = 
@@ -16,18 +16,19 @@ export function agregarCardsVenta(obras) {
             <p>${obras.descripcion}</p>
             <h3>$ ${obras.valor}.-</h3>
          </div>
-         <div class="card__info">
-            <div>
-               <a class="card__btn add-cart" href="#">
-                  <span class="material-symbols-outlined">add_shopping_cart</span>
-               </a>
-            </div>
-         </div>
          `
+         // <div class="card__info">
+         //    <div>
+         //       <a class="card__btn add-cart" href="#">
+         //          <span class="material-symbols-outlined">add_shopping_cart</span>
+         //       </a>
+         //    </div>
+         // </div>
+         
          return card
 }
 
-export function agregarCardsSubasta(obras) {
+export function renderCardsSubasta(obras) {
    let card = document.createElement('div')
    card.classList.add('card')
    card.innerHTML = 
@@ -54,32 +55,32 @@ export function agregarCardsSubasta(obras) {
          return card
 }
 
-export function agregarCardsDetalle(obras) {
+export function renderCardsDetalle(obra) {
    let card = document.createElement('div')
    card.classList.add('card')
    card.innerHTML = 
          `
          <div>
-            <a href="detalleObra.html?oid=${obras.id}">   
-               <img src="${obras.img}" alt="${obras.descripcion}" class="card__image">
+            <a href="detalleObra.html?oid=${obra.id}">   
+               <img src="${obra.img}" alt="${obra.descripcion}" class="card__image">
             </a>
          </div>
          <div class="card__content">
-            <h3>${obras.nombre}</h3>
-            <p>${obras.descripcion}</p>
+            <h3>${obra.nombre}</h3>
+            <p>${obra.descripcion}</p>
             <hr>
-            <p>Valor actual: <span class="valor-oferta">$ ${obras.valorOferta}</span>.-</p>
+            <p>Valor actual: <span class="valor-oferta">$ ${obra.valorOferta}</span>.-</p>
          </div>
          <div class="card__info">
             <button class="card__btn subasta__btn">
-               <span class="material-symbols-outlined">delete</span>
+               <span class="material-symbols-outlined">add_shopping_cart</span>
             </button>
          </div>
          `
          return card
 }
 
-export function agregarCardsCarrito(obras) {
+export function renderCardsCarrito(obras) {
    let card = document.createElement('div')
    card.classList.add('card')
    card.innerHTML = 
