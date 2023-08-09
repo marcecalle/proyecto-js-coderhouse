@@ -1,6 +1,7 @@
 import { obrasSubasta } from "./obras.js"
 import { guardarEnLS, extraerDeLS, renderCardsSubasta, actualizarValorOferta, renderValorOferta } from "./funciones.js"
 
+
 // TRAER NODO DEL HTML
 let cardsContainer = document.getElementById('cards-container')
 

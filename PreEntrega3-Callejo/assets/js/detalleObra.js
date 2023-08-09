@@ -1,4 +1,4 @@
-import { renderCardsDetalle } from "./funciones.js"
+import { guardarEnLS, renderCardsDetalle } from "./funciones.js"
 
 // TRAER LAS OBRAS DESDE UN ARCHIVO JSON CON FETCH
 const traerObraJSON = async (oid) => {
@@ -24,3 +24,12 @@ const obraJson = await traerObraJSON(oid)
 
 //AGREGAR CARDS A DETALLE
 cardsContainer.appendChild(renderCardsDetalle(obraJson))
+
+// TRAER NODO BOTON DEL HTML 
+const botonAgregar = document.querySelector(".agregar-carrito")
+console.log(botonAgregar);
+botonAgregar.onclick = () => {
+         const item = obraJson
+         miCarrito.push(item)
+         guardarEnLS("miCarrito", miCarrito)
+      }

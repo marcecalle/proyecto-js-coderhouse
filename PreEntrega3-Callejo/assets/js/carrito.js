@@ -1,7 +1,7 @@
 import { guardarEnLS, extraerDeLS, renderCardsCarrito } from "./funciones.js"
 import { obras, obrasVenta, } from "./obras.js"
 
-let miCarrito
+const miCarrito = ""
 
 // TRAER CARRITO DEL LOCAL STORAGE
 const carritoLS = extraerDeLS('miCarrito')
@@ -20,5 +20,5 @@ if (miCarrito.length !== 0) {
       cardsContainer.appendChild(renderCardsCarrito(items))
    }
 } else {
-   alert('Carrto Vacío')
+   alert('Carrito Vacío')
 }

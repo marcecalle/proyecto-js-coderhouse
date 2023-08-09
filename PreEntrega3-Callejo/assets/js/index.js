@@ -2,7 +2,9 @@ import { obras, obrasVenta } from "./obras.js"
 import { guardarEnLS, extraerDeLS, renderCardsVenta } from "./funciones.js"
 
 // GUARDAR OBRAS EN EL LOCAL STORAGE
-guardarEnLS('obrasLS', obras)
+// guardarEnLS('obrasLS', obras)
+
+let miCarrito = extraerDeLS("miCarrito") || [];
 
 //*CREAR CARDS A PARTIR DE MIS OBRAS
 

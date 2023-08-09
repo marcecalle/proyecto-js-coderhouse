@@ -72,7 +72,7 @@ export function renderCardsDetalle(obra) {
             <p>Valor actual: <span class="valor-oferta">$ ${obra.valorOferta}</span>.-</p>
          </div>
          <div class="card__info">
-            <button class="card__btn subasta__btn">
+            <button id="${obra.id}" class="card__btn agregar-carrito">
                <span class="material-symbols-outlined">add_shopping_cart</span>
             </button>
          </div>
