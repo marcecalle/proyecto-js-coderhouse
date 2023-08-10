@@ -14,17 +14,8 @@ export function renderCardsVenta(obras) {
          <div class="card__content">
             <h3>${obras.nombre}</h3>
             <p>${obras.descripcion}</p>
-            <h3>$ ${obras.valor}.-</h3>
          </div>
          `
-         // <div class="card__info">
-         //    <div>
-         //       <a class="card__btn add-cart" href="#">
-         //          <span class="material-symbols-outlined">add_shopping_cart</span>
-         //       </a>
-         //    </div>
-         // </div>
-         
          return card
 }
 
@@ -34,15 +25,13 @@ export function renderCardsSubasta(obras) {
    card.innerHTML = 
          `
          <div>
-            <a href="detalleObra.html?oid=${obras.id}">   
-               <img src="${obras.img}" alt="${obras.descripcion}" class="card__image">
-            </a>
+            <img src="${obras.img}" alt="${obras.descripcion}" class="card__image">
          </div>
          <div class="card__content">
             <h3>${obras.nombre}</h3>
             <p>${obras.descripcion}</p>
             <hr>
-            <p>Valor actual: <strong><span class="valor-oferta">$ ${obras.valorOferta}</span></strong>.-</p>
+            <p>Oferta actual: <strong><span class="valor-oferta">$ ${obras.valorOferta}</span></strong>.-</p>
          </div>
          <div class="card__info">
             <div>
@@ -69,7 +58,7 @@ export function renderCardsDetalle(obra) {
             <h3>${obra.nombre}</h3>
             <p>${obra.descripcion}</p>
             <hr>
-            <p>Valor actual: <span class="valor-oferta">$ ${obra.valorOferta}</span>.-</p>
+            <p>Precio: <strong><span class="valor-oferta">$ ${obra.valor}</span></strong>.-</p>
          </div>
          <div class="card__info">
             <button id="${obra.id}" class="card__btn agregar-carrito">
@@ -94,7 +83,7 @@ export function renderCardsCarrito(obras) {
             <h3>${obras.nombre}</h3>
             <p>${obras.descripcion}</p>
             <hr>
-            <p>Valor actual: <span class="valor-oferta">$ ${obras.valorOferta}</span>.-</p>
+            <p>Precio: <span class="valor-oferta">$ ${obras.valor}</span>.-</p>
          </div>
          <div class="card__info">
             <button class="card__btn subasta__btn">

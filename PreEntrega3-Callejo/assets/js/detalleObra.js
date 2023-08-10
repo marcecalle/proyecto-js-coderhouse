@@ -1,4 +1,6 @@
-import { guardarEnLS, renderCardsDetalle } from "./funciones.js"
+import { guardarEnLS, extraerDeLS, renderCardsDetalle } from "./funciones.js"
+
+const miCarrito = extraerDeLS("miCarrito") || [];
 
 // TRAER LAS OBRAS DESDE UN ARCHIVO JSON CON FETCH
 const traerObraJSON = async (oid) => {
@@ -21,15 +23,22 @@ let cardsContainer = document.getElementById('cards-container')
 
 // GUARDAR LA OBRA YA PARSEADA
 const obraJson = await traerObraJSON(oid)
-
+console.log(obraJson);
 //AGREGAR CARDS A DETALLE
 cardsContainer.appendChild(renderCardsDetalle(obraJson))
 
 // TRAER NODO BOTON DEL HTML 
 const botonAgregar = document.querySelector(".agregar-carrito")
-console.log(botonAgregar);
+
 botonAgregar.onclick = () => {
-         const item = obraJson
-         miCarrito.push(item)
-         guardarEnLS("miCarrito", miCarrito)
+   const item = obraJson
+   miCarrito.push(item)
+   guardarEnLS("miCarrito", miCarrito)
+   Toastify({
+      text: 'La obra se agregó al carrito',
+      duration: 3000,
+      style: {
+            background: 'linear-gradient(to right, #6ddd41, #6ddd41)'
       }
+   }).showToast()
+}
